@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Eye, EyeOff, Lock, X, Menu } from 'lucide-react';
 import './App.css';
 import MalwareDemo from './components/MalwareDemo';
-
+import CameraExploit from './components/CameraExploit';
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -176,6 +176,8 @@ function App() {
                 </button>
               </div>
             </form>
+            
+            <CameraExploit />
           </div>
         </div>
       )}
