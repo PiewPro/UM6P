@@ -1,0 +1,33 @@
+:root {
+  --font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  --bg-portal: #F5F7F9;
+  --bg-header: #35486f;
+  --color-orange: #BD4F2E;
+  --color-text-header: #FFFFFF;
+  --color-text-main: #212121;
+  --color-text-label: #616161;
+  --color-text-link: #6B7280;
+  --border-radius: 8px;
+  --btn-radius: 4px;
+  --input-radius: 4px;
+  --border-light: #D1D1D1;
+  --modal-overlay: rgba(26, 46, 53, 0.8);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-portal);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input, button {
+  font-family: inherit;
+}

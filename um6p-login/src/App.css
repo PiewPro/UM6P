@@ -1,0 +1,481 @@
+.portal-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.portal-header-wrapper {
+  background-color: var(--bg-header);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.portal-header {
+  height: 90px;
+  max-width: 1200px;
+  /* Bring back max-width to center items to align perfectly with main */
+  width: 100%;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  color: var(--color-text-header);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.um6p-logo {
+  height: 48px;
+  object-fit: contain;
+}
+
+.header-center {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.profile-link:hover {
+  opacity: 0.8;
+}
+
+.profile-icon {
+  color: #FFFFFF;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.btn-login-header {
+  background-color: #d46b2b;
+  color: white;
+  border: none;
+  border-radius: var(--btn-radius);
+  padding: 12px 28px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-login-header:hover {
+  background-color: #bb581f;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile Dropdown */
+.mobile-menu-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-header);
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px 20px 20px;
+  z-index: 500;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu-item {
+  color: white;
+  padding: 20px 0 0 0;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.profile-icon-mobile {
+  color: white;
+}
+
+.login-item {
+  color: #d46b2b;
+}
+
+/* Main Content Alignment */
+.portal-main {
+  flex: 1;
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 40px;
+  /* same horizontal padding as header to perfectly align elements */
+}
+
+.main-left {
+  flex: 0 0 50%;
+  padding-right: 50px;
+  /* spacing between text and image */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.portal-title {
+  color: #02528A;
+  font-size: 20px;
+  /* increased */
+  font-weight: 700;
+  margin-top: 35px;
+  margin-bottom: 25px;
+}
+
+.portal-title:first-child {
+  margin-top: 0;
+}
+
+.welcome-text-small {
+  font-size: 16px;
+  /* increased */
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--color-text-main);
+}
+
+.portal-desc {
+  font-size: 15px;
+  /* increased */
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: var(--color-text-main);
+}
+
+.orange-text-link {
+  color: var(--color-orange);
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.main-right {
+  flex: 0 0 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* push picture to align with the right edge */
+}
+
+.students-image {
+  width: 100%;
+  max-height: 650px;
+  /* slightly increased to match larger text */
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--modal-overlay);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.login-modal {
+  background-color: #FFFFFF;
+  width: 480px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  padding: 40px;
+  position: relative;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--color-orange);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.login-modal h2 {
+  font-size: 24px;
+  color: var(--color-text-main);
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--color-text-label);
+  margin-bottom: 8px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper input {
+  width: 100%;
+  height: 45px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--input-radius);
+  padding: 0 15px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.input-wrapper input:focus {
+  outline: none;
+  border-color: var(--color-orange);
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  color: var(--color-orange);
+  cursor: pointer;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.forgot-password {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--color-text-link);
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.btn-submit {
+  background-color: #d46b2b;
+  color: white;
+  border: none;
+  border-radius: var(--btn-radius);
+  padding: 12px 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+  background-color: #bb581f;
+}
+
+.btn-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.desktop-only {
+  display: flex;
+}
+
+.mobile-only {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .portal-header {
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .um6p-logo {
+    height: 35px;
+    /* scaled down */
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: flex !important;
+    align-items: center;
+  }
+
+  .mobile-menu-icon {
+    color: white;
+    cursor: pointer;
+  }
+
+  .portal-main {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .main-left {
+    flex: 1;
+    width: 100%;
+    padding-right: 0;
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  .main-right {
+    flex: 1;
+    width: 100%;
+    padding: 0;
+  }
+
+  .students-image {
+    max-height: auto;
+  }
+
+  .login-modal {
+    width: 90%;
+    padding: 24px;
+  }
+
+  /* Retain readable sizes for mobile */
+  .portal-title {
+    font-size: 18px;
+  }
+
+  .welcome-text-small {
+    font-size: 14px;
+  }
+
+  .portal-desc {
+    font-size: 14px;
+  }
+}
+
+.malware-demo-box {
+  background-color: #f0f0f0;
+  border: 2px solid #333;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 8px;
+}
+
+.malware-demo-box h2 {
+  margin-top: 0;
+  color: #cc0000;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.controls button {
+  padding: 8px 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #a71d2a;
+}
+
+.status {
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.status:empty {
+  display: none;
+}
+
+.data-display {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.data-display ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.data-display li {
+  border-bottom: 1px solid #eee;
+  padding: 5px 0;
+  font-family: monospace;
+  font-size: 0.9em;
+}
